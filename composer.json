@@ -1,0 +1,8 @@
+{
+    "name": "cactuscake/blog",
+    "description": "test task",
+    "type": "project",
+    "require": {
+        "smarty/smarty": "^5.9"
+    }
+}
