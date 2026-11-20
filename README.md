@@ -24,25 +24,29 @@ Docker Desktop (для Windows/Mac) или Docker + Docker Compose (для Linux
 
 ### Шаг 1: Запуск контейнеров Docker
 ```bash
-docker-compose up -d --build```
+docker-compose up -d --build
+```
 
 При первом запуске скачаются образы PHP и MySQL, это может занять несколько минут.
 
 Проверить, что контейнеры запущены:
 
 ```bash
-docker-compose ps```
+docker-compose ps
+```
 Оба сервиса (php и db) должны быть в состоянии Up.
 
 ### Шаг 2: Установка зависимостей (Smarty)
 Выполните команду внутри контейнера php:
 
 ```bash
-docker-compose exec php composer install```
+docker-compose exec php composer install
+```
 Если файл composer.json ещё не создан или вы начинаете с нуля:
 
 ```bash
-docker-compose exec php composer require smarty/smarty```
+docker-compose exec php composer require smarty/smarty
+```
 
 ### Шаг 3: Создание структуры базы данных
 Выполните SQL-запросы для создания таблиц. Можно сделать это одной командой:
@@ -70,10 +74,12 @@ CREATE TABLE post_category (
     FOREIGN KEY (post_id) REFERENCES posts(id) ON DELETE CASCADE,
     FOREIGN KEY (category_id) REFERENCES categories(id) ON DELETE CASCADE
 );
-"```
+"
+```
 ### Шаг 4: Наполнение базы тестовыми данными (сидинг)
 ```bash
-docker-compose exec php php seed.php```
+docker-compose exec php php seed.php
+```
 Вы должны увидеть сообщение Seeding completed!. Скрипт создаст несколько категорий и постов для демонстрации.
 
 ### Шаг 5: Проверка работы
