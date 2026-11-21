@@ -3,7 +3,8 @@
     "description": "test task",
     "type": "project",
     "require": {
-        "smarty/smarty": "^5.9"
+        "smarty/smarty": "^5.9",
+        "scssphp/scssphp": "^2.1"
     },
         "autoload": {
         "psr-4": {

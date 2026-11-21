@@ -1,0 +1,69 @@
+@import 'variables';
+@import 'mixins';
+
+body {
+    font-family: $font-family;
+    background-color: $bg-color;
+    color: $text-color;
+    line-height: 1.6;
+    margin: 0;
+    padding: $spacing-lg;
+}
+
+a {
+    color: $primary-color;
+    text-decoration: none;
+    &:hover {
+        text-decoration: underline;
+    }
+}
+
+.container {
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+h1, h2, h3 {
+    color: darken($text-color, 10%);
+}
+
+// Категории на главной странице
+.category-block {
+    @include card;
+    margin-bottom: $spacing-lg;
+
+    h2 {
+        margin-top: 0;
+        border-bottom: 2px solid $primary-color;
+        padding-bottom: $spacing-sm;
+    }
+}
+
+// Карточки постов
+.post {
+    @include card;
+    margin-bottom: $spacing-md;
+
+    h3 {
+        margin-top: 0;
+    }
+}
+
+// Пагинация
+.pagination {
+    display: flex;
+    gap: $spacing-sm;
+    margin-top: $spacing-lg;
+    
+    a, strong {
+        padding: $spacing-sm $spacing-md;
+        border: 1px solid $primary-color;
+        border-radius: 4px;
+        background: $card-bg;
+    }
+    
+    strong {
+        background: $primary-color;
+        color: #fff;
+    }
+}
